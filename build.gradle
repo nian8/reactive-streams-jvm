@@ -1,5 +1,5 @@
 buildscript {
-    repositories { 
+    repositories {
         jcenter()
         mavenCentral()
         maven {
@@ -18,8 +18,8 @@ subprojects {
     group = "org.reactivestreams"
     version = "1.0.3"
 
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.6
+    sourceCompatibility = 11
+    targetCompatibility = 11
 
     tasks.withType(JavaCompile) {
         configure(options) {
@@ -39,10 +39,10 @@ subprojects {
     }
 
     tasks.withType(Test) {
-      testLogging {
-        exceptionFormat "full"
-        events "failed", "started", "standard_out", "standard_error"
-      }
+        testLogging {
+            exceptionFormat "full"
+            events "failed", "started", "standard_out", "standard_error"
+        }
     }
 
     repositories {
@@ -72,14 +72,14 @@ subprojects {
         }
 
         publishing {
-          publications {
-            mavenJava(MavenPublication) {
-              from components.java
+            publications {
+                mavenJava(MavenPublication) {
+                    from components.java
+                }
             }
-          }
-          repositories {
-            mavenLocal()
-          }
+            repositories {
+                mavenLocal()
+            }
         }
 
         artifacts {
@@ -99,7 +99,7 @@ subprojects {
                             if (user == null || password == null) {
                                 throw new InvalidUserDataException(
                                         "Cannot perform $uploadArchives.path due to missing credentials.\n" +
-                                        "Run with command line args `-P$userProp=«username» -P$passwordProp=«password»` or add these properties to $gradle.gradleUserHomeDir/gradle.properties.\n")
+                                                "Run with command line args `-P$userProp=«username» -P$passwordProp=«password»` or add these properties to $gradle.gradleUserHomeDir/gradle.properties.\n")
                             }
 
                             repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {

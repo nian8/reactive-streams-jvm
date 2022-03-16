@@ -29,14 +29,14 @@ public interface Subscriber<T> {
      * It is the responsibility of this {@link Subscriber} instance to call {@link Subscription#request(long)} whenever more data is wanted.
      * <p>
      * The {@link Publisher} will send notifications only in response to {@link Subscription#request(long)}.
-     * 
+     *
      * @param s the {@link Subscription} that allows requesting data via {@link Subscription#request(long)}
      */
     public void onSubscribe(Subscription s);
 
     /**
      * Data notification sent by the {@link Publisher} in response to requests to {@link Subscription#request(long)}.
-     * 
+     *
      * @param t the element signaled
      */
     public void onNext(T t);

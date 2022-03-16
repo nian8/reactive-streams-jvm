@@ -1,12 +1,12 @@
 description = 'reactive-streams-tck'
 dependencies {
-    api group: 'org.testng', name: 'testng', version:'7.3.0'
+    api group: 'org.testng', name: 'testng', version: '7.3.0'
     api project(':reactive-streams')
     implementation project(':reactive-streams-examples')
 }
 
 jar {
-    bnd ('Bundle-Name': 'reactive-streams-jvm',
+    bnd('Bundle-Name': 'reactive-streams-jvm',
             'Bundle-Vendor': 'Reactive Streams SIG',
             'Bundle-Description': 'Reactive Streams TCK',
             'Bundle-DocURL': 'http://reactive-streams.org',

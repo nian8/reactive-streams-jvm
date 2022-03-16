@@ -16,14 +16,14 @@ public interface Subscription {
     /**
      * No events will be sent by a {@link Publisher} until demand is signaled via this method.
      * <p>
-     *  It can be called however often and whenever needed—but if the outstanding cumulative demand ever becomes Long.MAX_VALUE or more,
-     *  it may be treated by the {@link Publisher} as "effectively unbounded".
+     * It can be called however often and whenever needed—but if the outstanding cumulative demand ever becomes Long.MAX_VALUE or more,
+     * it may be treated by the {@link Publisher} as "effectively unbounded".
      * <p>
      * Whatever has been requested can be sent by the {@link Publisher} so only signal demand for what can be safely handled.
      * <p>
      * A {@link Publisher} can send less than is requested if the stream ends but
      * then must emit either {@link Subscriber#onError(Throwable)} or {@link Subscriber#onComplete()}.
-     * 
+     *
      * @param n the strictly positive number of elements to requests to the upstream {@link Publisher}
      */
     public void request(long n);
